@@ -31,28 +31,27 @@ def pets_by_breed(pet_shop, breed)
       pets_to_find << pet
 
     end
-end
-return pets_to_find
+  end
+  return pets_to_find
 end
 
-# def find_pet_by_name(pet_shop, name)
-#   pets_to_find = []
-#   for pet in pet_shop[:pets]
-#     if pet[:name] == name
-#       pets_to_find << pet
-#
-#     end
-# end
-# return pets_to_find
-# end
 
 def find_pet_by_name( pet_shop, name )
 
   for pet in pet_shop[:pets]
     if pet[:name] == name
       return pet
+
+
+
     end
   end
   return nil
+
+end
+
+def remove_pet_by_name(pet_shop, name)
+
+  pet_shop[:pets].delete(find_pet_by_name(pet_shop, name))
 
 end
