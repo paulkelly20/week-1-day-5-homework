@@ -70,8 +70,15 @@ def add_pet_to_stock(pet_shop, new_pet)
   pet_shop[:pets].push(new_pet)
 end
 
+# def customer_pet_count(pet_shop)
+#    if pet_shop[:pets] == []
+#      return 0
+#    else return pet_shop[:pets]
+#    end
+# end
+
 def customer_pet_count(pet_shop)
-   if pet_shop[:pets] == []
+   if pet_shop[:pets].empty?
      return 0
    else return pet_shop[:pets]
    end
