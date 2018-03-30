@@ -80,6 +80,14 @@ end
 def customer_pet_count(pet_shop)
    if pet_shop[:pets].empty?
      return 0
-   else return pet_shop[:pets]
+   else return 1
    end
+end
+
+# def customer_pet_count(pet_shop)
+#   pet_shop[:pets].length
+# end
+
+def add_pet_to_customer(customer, new_pet)
+   customer[:pets].push(new_pet)
 end
