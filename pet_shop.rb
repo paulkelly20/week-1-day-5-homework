@@ -1,5 +1,5 @@
 def pet_shop_name(pet_shop)
-  return pet_shop[:name]
+   pet_shop[:name]
 end
 
 def total_cash(pet_shop)
@@ -11,37 +11,32 @@ def add_or_remove_cash(pet_shop,cash)
 end
 
 def pets_sold(pet_shop)
-  return pet_shop[:admin][:pets_sold]
+   pet_shop[:admin][:pets_sold]
 end
 
 def increase_pets_sold(pet_shop,sold)
-  return pet_shop[:admin][:pets_sold] += sold
+   pet_shop[:admin][:pets_sold] += sold
 end
 
 def stock_count(pet_shop)
-  return pet_shop[:pets].count
+   pet_shop[:pets].count
 end
 
 def pets_by_breed(pet_shop, breed, *pets_to_find)
   for pet in pet_shop[:pets]
-    if pet[:breed] == breed
-      pets_to_find.push(pet)
+    if pet[:breed] == breed then pets_to_find.push(pet)
     end
   end
-  return pets_to_find
+  pets_to_find
 end
-
 
 def find_pet_by_name( pet_shop, name )
   for pet in pet_shop[:pets]
-    if pet[:name] == name
-      return pet
-      end
+    if pet[:name] == name then return pet
     end
-  return nil
+  end
+   nil
 end
-
-
 
 def remove_pet_by_name(pet_shop, name)
   pet_shop[:pets].delete(find_pet_by_name(pet_shop, name))
@@ -52,9 +47,8 @@ def add_pet_to_stock(pet_shop, new_pet)
   end
 
 def customer_pet_count(pet_shop)
-   if pet_shop[:pets].empty?
-     return 0
-   else return pet_shop[:pets].count
+   if pet_shop[:pets].empty? then 0
+      else  pet_shop[:pets].count
    end
 end
 
@@ -67,7 +61,7 @@ def customer_can_afford_pet(customer, pets)
 end
 
 def sell_pet_to_customer(pet_shop, pets, customer)
-      return nil unless pets && customer_can_afford_pet(customer, pets)
+       return nil unless pets && customer_can_afford_pet(customer, pets)
         add_pet_to_customer(customer, pets)
         increase_pets_sold(pet_shop, 1)
         add_or_remove_cash(pet_shop, pets[:price])
