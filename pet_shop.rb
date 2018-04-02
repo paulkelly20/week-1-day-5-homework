@@ -61,8 +61,9 @@ def customer_can_afford_pet(customer, pets)
 end
 
 def sell_pet_to_customer(pet_shop, pets, customer)
-       return nil unless pets && customer_can_afford_pet(customer, pets)
+        if pets && customer_can_afford_pet(customer, pets)
         add_pet_to_customer(customer, pets)
         increase_pets_sold(pet_shop, 1)
         add_or_remove_cash(pet_shop, pets[:price])
+end
 end
